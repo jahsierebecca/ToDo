@@ -35,7 +35,7 @@ Bonus features
 
 Estimated Time Required
 -----------------------
-7 hours for basic app.
+7 hours for basic app.  
 5 additional hours for bonus features.
 
 
