@@ -1,5 +1,4 @@
-ToDo
-====
+Read Me
 
 System Requirements
 -------------------
@@ -37,5 +36,4 @@ Estimated Time Required
 -----------------------
 7 hours for basic app.  
 5 additional hours for bonus features.
-
 
