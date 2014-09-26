@@ -4,14 +4,18 @@
     <title>To Do!</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,900' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cookie|Dancing+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:800italic,800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/responsive.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 <body>
-<h1>ToDo!</h1>
-<br>
-<p id="tagline"> (Add and remove list items using functions)</h2>
+<div class="title">
+  <h1>ToDo-erator</h1>
+  <br>
+  <h2>Because making lists is easier than completing them.</h2>
+</div>
 <div class="container">
   <div class="form grey_box">
     <form id="the_form" action="#">
@@ -21,12 +25,10 @@
         <button id="submitButton" type="button">ToDo!</button>
     </form>  
   </div>
-
   <div class="list grey_box">
     <ul id="todoList"></ul>  
   </div>
 </div>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
