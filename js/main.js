@@ -1,5 +1,7 @@
 /* Define the functions we'll use */
 
+/* this function is called when the checkbox in a list item is clicked. "this" always refers to the “owner” of the function we're executing- to the object that a function is a method of. */
+/* it changes the text of the list item to strikethrough and grey */ 
 function completeItem() {
   this.nextSibling.className = "completed";
 }
@@ -11,16 +13,14 @@ function getFormValues(){
   return {task: todo}; 
 }
 
-
 /* This function adds a new list item to the list using the given parameters */
-
 /* Why do we separate this function from the one above? Where else do these values come from? */
 
-
 function addListItem( formValues){
+
   /* make the list item element */
   var item = document.createElement("li");
-  /* make the text node and attach it to the list element */
+  
   /* put a checkbox at the start of the list item and make it clickable*/
   var checkbox = document.createElement("input");
   checkbox.setAttribute("type", "checkbox");
@@ -29,7 +29,8 @@ function addListItem( formValues){
 
   /* add the text from the parameter and make it stylable using a span element */
   var the_span = document.createElement("span");
-  /* make the text node and attach it to the list element */
+ 
+  /* make the text node and attach it to the span element */
   var node = document.createTextNode( formValues.task);
   the_span.appendChild(node);
   item.appendChild(the_span);
@@ -39,10 +40,13 @@ function addListItem( formValues){
   deleteButtonImage.setAttribute("src", "http://www2.psd100.com/icon/2013/09/1001/minus-icon-0910125918.png");
   deleteButtonImage.setAttribute("alt", "[X]");
   deleteButtonImage.setAttribute("class", "deleteListItem");
+  
   /* make it clickable */
   deleteButtonImage.addEventListener("click", removeListItem);
+  
   /* attach the button to the list item */
   item.appendChild(deleteButtonImage);
+  
   /* attach the list item to the list */
   var list = document.getElementById("todoList");
   list.appendChild(item);
@@ -65,33 +69,16 @@ function setUpForm() {
   button.addEventListener("click", addListItemFromForm);
   }
 
-/* this function sets up things to catch clicks on ALL the current delete buttons */
-function attachDeleteButtonListeners() {
-  /* Find all the delete buttons (which are images) */
-  var closeButtonElements = document.getElementsByClassName("deleteListItem");
-
-  /* For each one, add an event listener */
-  if (closeButtonElements.length > 0) {
-    for (var i = 0; i<closeButtonElements.length; i++) {
-      closeButtonElements[i].addEventListener("click", removeListItem);
-    }  
-  }
-  else { /* handle errors */
-    console.log("No delete buttons found.");
-  }
-}
-
-
-/* this function adds a bunch of dummy values to the list */
+/* this function adds some example values to the list */
 function makeStartingList(){
     for(var i = 0; i<1; i++){
     addListItem( {task: "Make the list"});
     addListItem( {task: "Test the list"});
-    addListItem( {task: "Make the list pretty"});
+    addListItem( {task: "Pretend to do the list"});
   }
 }
 
-/* FINALLY, let's run the functions we've defined to get the page ready for the user */
+/* This runs the functions previously defined and gets the page ready for the user */
 setUpForm();
 makeStartingList();
 attachDeleteButtonListeners();
